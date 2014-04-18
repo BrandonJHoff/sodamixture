@@ -1,0 +1,50 @@
+<section id="main_content">
+	<div class="row">
+		<div class="twelve columns">
+			<h3>Highest Rated</h3>
+		</div>	
+	</div>
+
+	<div class="row highest_rated">
+		<div class="twelve columns">
+			<ul class="block-grid four-up">
+				<li ng-repeat="mixture in mixtures | orderBy:'-rating' | limitTo:4">
+					<a href="#/mixtures/{{mixture._id}}" class="th"><img ng-src="{{mixture.img}}"></a>
+		  			<h5><a href="#/mixtures/{{mixture._id}}">{{mixture.name}}</a></h5>
+					<h6 sm-ratings="{{mixture.rating}}"></h6>
+				</li>
+		  	</ul>
+		</div>
+	</div>
+	
+	<div class="row">
+		<hr>
+	</div>
+	
+	<div class="row">
+		<div class="seven columns">
+			<h4>Latest Mixtures</h4>
+			<div class="row" ng-repeat="mixture in mixtures | orderBy:'-date' | limitTo:4">
+		 		<div class="row">
+		  			<div class="two phone-one columns">
+		  				<a href="#/mixtures/{{mixture._id}}" class="th"><img ng-src="{{mixture.img}}"></a>
+		  			</div>
+		  			<div class="ten phone-three columns">
+						<div class="right">
+							<div class="row"><h6 class="right" sm-ratings="{{mixture.rating}}"></h6></div>
+							<div class='row'><h6 >{{mixture.date | date:'medium'}}</h6></div>
+						</div>
+		  				<h4><a href="#/mixtures/{{mixture._id}}">{{mixture.name}}</a></h4>
+		 			</div>
+		 		</div>
+				<div class="row">
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="four columns offset-by-one">
+			<script src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=300X250&cwpid=553619&cwwidth=300&cwheight=250&cwpnet=1&cwtagid=153750"></script>
+		</div>
+	</div>
+	
+</section>

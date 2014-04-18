@@ -1,0 +1,45 @@
+<section id="main_content">
+	
+	<div class="row">
+		<dl class="sub-nav">
+		 	<dt>Sort:</dt>
+		  	<dd ng-class="{active: sorting_order == 'date'}" ><a ng-click="sorting_order = 'date'">Date</a></dd>
+		  	<dd ng-class="{active: sorting_order == 'rating'}" ><a ng-click="sorting_order = 'rating'">Rating</a></dd>
+		</dl>
+	</div>
+	
+	<div class="row">
+		<hr>
+	</div>
+	
+	<div class="row">
+		<div class="seven columns">
+			
+			<div class="row" ng-repeat="mixture in mixtures | orderBy:'-'+sorting_order | limitTo:mixtures_limit">
+		 		<div class="row">
+		  			<div class="two phone-one columns">
+		  				<a href="#/mixtures/{{mixture._id}}" class="th"><img ng-src="{{mixture.img}}"></a>
+		  			</div>
+		  			<div class="ten phone-three columns">
+		  				<div class="right">
+							<div class="row"><h6 class="right" sm-ratings="{{mixture.rating}}"></h6></div>
+							<div class='row'><h6 >{{mixture.date | date:'medium'}}</h6></div>
+						</div>
+		  				<h4><a href="#/mixtures/{{mixture._id}}">{{mixture.name}}</a></h4>
+		 			</div>
+		 		</div>
+				<div class="row">
+					<hr>
+				</div>
+			</div>
+			
+			<div class="row" style="text-align:center; margin-bottom:20px;">
+				<button class="radius button" ng-click="mixtures_limit = mixtures_limit + 4" ng-init="mixtures_limit = 4" ng-show="mixtures_limit < mixtures.length">Load More</button>
+			</div>
+		</div>
+		<div class="four columns offset-by-one">
+			<img src="http://placehold.it/300x250&text=Ad">
+		</div>
+	</div>
+	
+</section>

@@ -1,0 +1,17 @@
+.top-bar {
+	margin-bottom: 0;
+}
+
+header {
+	padding:22px 0;
+}
+
+footer {
+	background: #3f3f3f;
+	color: #fff;
+	padding: 11px 0;
+}
+
+.highest_rated .th {
+	margin-top:	2px;
+}

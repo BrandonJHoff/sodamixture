@@ -1,0 +1,46 @@
+<section id="main_content">
+	
+	<div class="row">
+		<div class="six columns">
+			<canvas id="soda" width="240" height="300"></canvas>
+			<script>
+				var soda = new Soda();
+				soda.Initialize('soda');
+			</script>
+		</div>
+		<div class="five columns offset-by-one">
+			<div class="row">
+				<h1>{{mixture.name}}</h1>
+			</div>
+			<div class="row">
+				<h6 class="subheader">Aka: Mixture Mixture Mixture</h6>
+			</div>
+			<div class="row">
+				<h4 sm-ratings="{{mixture.rating}}"></h4>
+			</div>
+			<div class="row">
+				<h6 >{{mixture.date | date:'medium'}}</h6>
+			</div>
+			<div class="row">
+				<h4>Ingredients:</h4>
+				<ul class="disc">
+					<li ng-repeat="ingredient in mixture.ingredients | orderBy:'percent'">{{(ingredient.percent / 100) * 16}} oz - {{ingredient.name}}</li>
+				</ul>
+			</div>
+			<div class="row">
+				<p>This is some description about the Mixture and what not</p>
+				<p>{{mixture_id}}</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="six columns">
+			<img src="http://placehold.it/400x100&text=Comments">
+		</div>
+		<div class="five columns offset-by-one">
+			<img src="http://placehold.it/300x250&text=Ad">
+		</div>
+	</div>
+	
+</section>
